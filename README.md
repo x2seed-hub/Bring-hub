@@ -4362,7 +4362,7 @@ end
 
 
 
-_G.FastAttackDelay = 0.13
+_G.FastAttackDelay = 0
 
     local Client = game.Players.LocalPlayer
     local STOP = require(Client.PlayerScripts.CombatFramework.Particle)
@@ -4451,57 +4451,60 @@ CamShake:Stop()
 
 
 
-    local ToggleBringMob = Tabs.Setting:AddToggle("ToggleBringMob", {Title = "Bring Mob", Default = true })
-    ToggleBringMob:OnChanged(function(Value)
-        BringMobs = Value
-    end)
-    Options.ToggleBringMob:SetValue(true)
-	task.spawn(function()
-        while task.wait() do
-        if BringMobs then
-        pcall(function()
-          for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
-          if not string.find(v.Name,"Boss") and v.Name == MonFarm and (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 350 then
-          if InMyNetWork(v.HumanoidRootPart) then
-            if InMyNetWork(v.HumanoidRootPart) then
-          v.HumanoidRootPart.CFrame = FarmPos
-          v.HumanoidRootPart.CanCollide = false
-          v.HumanoidRootPart.Size = Vector3.new(1,1,1)
-		  if v.Humanoid:FindFirstChild("Animator") then
-			v.Humanoid.Animator:Destroy()
-		end
-          end
-        end
-          end
-          end
-          end)
-        end
+local ToggleBringMob = Tabs.Setting:AddToggle("ToggleBringMob", {Title = "Bring Mob", Default = true })
+ToggleBringMob:OnChanged(function(Value)
+    BringMobs = Value
+end)
 
+Options.ToggleBringMob:SetValue(true)
+
+task.spawn(function()
+    while task.wait() do
+        if BringMobs then
+            pcall(function()
+                for _, mob in pairs(game.Workspace.Enemies:GetChildren()) do
+                    -- ตรวจสอบว่าไม่ใช่บอสและชื่อของมอนสเตอร์ตรงกับ MonFarm
+                    if not string.find(mob.Name, "Boss") and mob.Name == MonFarm and 
+                       (mob.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 350 then
+                        
+                        if InMyNetWork(mob.HumanoidRootPart) then
+                            -- ย้ายมอนสเตอร์ไปที่ตำแหน่งที่กำหนด
+                            mob.HumanoidRootPart.CFrame = FarmPos
+                            mob.HumanoidRootPart.CanCollide = false
+                            mob.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
+                            if mob.Humanoid:FindFirstChild("Animator") then
+                                mob.Humanoid.Animator:Destroy()
+                            end
+                        end
+                    end
+                end
+            end)
+        end
     end
-        end)
-      
-      task.spawn(function()
-        while true do wait()
+end)
+
+task.spawn(function()
+    while true do
+        wait()
         if setscriptable then
-        setscriptable(game.Players.LocalPlayer,"SimulationRadius",true)
+            setscriptable(game.Players.LocalPlayer, "SimulationRadius", true)
         end
         if sethiddenproperty then
-        sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
+            sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
         end
-        end
-        end)
-      
-      function InMyNetWork(object)
-      if isnetworkowner then
-      return isnetworkowner(object)
-      else
-        if (object.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 350 then
-      return true
-      end
-      return false
-      end
-      end
+    end
+end)
 
+function InMyNetWork(object)
+    if isnetworkowner then
+        return isnetworkowner(object)
+    else
+        if (object.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 350 then
+            return true
+        end
+        return false
+    end
+end
 
 
     local ToggleBypassTP = Tabs.Setting:AddToggle("ToggleBypassTP", {Title = "Bypass Tp", Default = false })
