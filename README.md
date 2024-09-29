@@ -2304,24 +2304,26 @@ local UICorner = Instance.new("UICorner")
 local UIGradient = Instance.new("UIGradient")
 local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 
-
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 ImageButton.Parent = ScreenGui
 ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ImageButton.Position = UDim2.new(0.10615778, 0, 0.16217947, 0)
-ImageButton.Size = UDim2.new(0.0627121851, 0, 0.107579626, 0)
+
+
+local size = 0.1
+ImageButton.Size = UDim2.new(size, 0, size, 0)
 ImageButton.Image = "rbxassetid://16305756919"
 
 UICorner.CornerRadius = UDim.new(0, 30)
 UICorner.Parent = ImageButton
 
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(244, 0, 0)), ColorSequenceKeypoint.new(0.32, Color3.fromRGB(146, 255, 251)), ColorSequenceKeypoint.new(0.65, Color3.fromRGB(180, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(96, 255, 231))}
 UIGradient.Parent = ImageButton
 
 UIAspectRatioConstraint.Parent = ImageButton
-UIAspectRatioConstraint.AspectRatio = 0.988
+UIAspectRatioConstraint.AspectRatio = 1
+
 
 
 local function HCEGY_fake_script()
@@ -4451,60 +4453,57 @@ CamShake:Stop()
 
 
 
-local ToggleBringMob = Tabs.Setting:AddToggle("ToggleBringMob", {Title = "Bring Mob", Default = true })
-ToggleBringMob:OnChanged(function(Value)
-    BringMobs = Value
-end)
-
-Options.ToggleBringMob:SetValue(true)
-
-task.spawn(function()
-    while task.wait() do
+    local ToggleBringMob = Tabs.Setting:AddToggle("ToggleBringMob", {Title = "Bring Mob", Default = true })
+    ToggleBringMob:OnChanged(function(Value)
+        BringMobs = Value
+    end)
+    Options.ToggleBringMob:SetValue(true)
+	task.spawn(function()
+        while task.wait() do
         if BringMobs then
-            pcall(function()
-                for _, mob in pairs(game.Workspace.Enemies:GetChildren()) do
-                    -- ตรวจสอบว่าไม่ใช่บอสและชื่อของมอนสเตอร์ตรงกับ MonFarm
-                    if not string.find(mob.Name, "Boss") and mob.Name == MonFarm and 
-                       (mob.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 350 then
-                        
-                        if InMyNetWork(mob.HumanoidRootPart) then
-                            -- ย้ายมอนสเตอร์ไปที่ตำแหน่งที่กำหนด
-                            mob.HumanoidRootPart.CFrame = FarmPos
-                            mob.HumanoidRootPart.CanCollide = false
-                            mob.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
-                            if mob.Humanoid:FindFirstChild("Animator") then
-                                mob.Humanoid.Animator:Destroy()
-                            end
-                        end
-                    end
-                end
-            end)
+        pcall(function()
+          for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+          if not string.find(v.Name,"Boss") and v.Name == MonFarm and (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 350 then
+          if InMyNetWork(v.HumanoidRootPart) then
+            if InMyNetWork(v.HumanoidRootPart) then
+          v.HumanoidRootPart.CFrame = FarmPos
+          v.HumanoidRootPart.CanCollide = false
+          v.HumanoidRootPart.Size = Vector3.new(1,1,1)
+		  if v.Humanoid:FindFirstChild("Animator") then
+			v.Humanoid.Animator:Destroy()
+		end
+          end
         end
-    end
-end)
+          end
+          end
+          end)
+        end
 
-task.spawn(function()
-    while true do
-        wait()
+    end
+        end)
+      
+      task.spawn(function()
+        while true do wait()
         if setscriptable then
-            setscriptable(game.Players.LocalPlayer, "SimulationRadius", true)
+        setscriptable(game.Players.LocalPlayer,"SimulationRadius",true)
         end
         if sethiddenproperty then
-            sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+        sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
         end
-    end
-end)
-
-function InMyNetWork(object)
-    if isnetworkowner then
-        return isnetworkowner(object)
-    else
+        end
+        end)
+      
+      function InMyNetWork(object)
+      if isnetworkowner then
+      return isnetworkowner(object)
+      else
         if (object.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 350 then
-            return true
-        end
-        return false
-    end
-end
+      return true
+      end
+      return false
+      end
+      end
+
 
 
     local ToggleBypassTP = Tabs.Setting:AddToggle("ToggleBypassTP", {Title = "Bypass Tp", Default = false })
