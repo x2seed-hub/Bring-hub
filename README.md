@@ -49,7 +49,7 @@ function CheckQuest()
             NameMon = "Bandit"
             CFrameQuest = CFrame.new(1061.66699, 16.5166187, 1544.52905)
             PosQuest = Vector3.new(1061.66699, 16.5166187, 1544.52905)
-            CFrameMon = CFrame.new(1199.31287, 52.2717781, 1536.91516)
+            CFrameMon = CFrame.new(1196.172, 11.8689699, 1616.95923)
             PosMon = Vector3.new(1199.31287, 52.2717781, 1536.91516)
         elseif j == 10 or j <= 14 then
             Ms = "Monkey [Lv. 14]"
@@ -58,7 +58,7 @@ function CheckQuest()
             NameMon = "Monkey"
             CFrameQuest = CFrame.new(-1604.12012, 36.8521118, 154.23732)
             PosQuest = Vector3.new(-1604.12012, 36.8521118, 154.23732)
-            CFrameMon = CFrame.new(-1772.4093017578, 60.860641479492, 54.872589111328)
+            CFrameMon = CFrame.new(-1619.10632, 21.7005882, 142.148117)
             PosMon = Vector3.new(-1772.4093017578, 60.860641479492, 54.872589111328)
         elseif j == 15 or j <= 29 then
             Ms = "Gorilla [Lv. 20]"
@@ -67,7 +67,7 @@ function CheckQuest()
             NameMon = "Gorilla"
             CFrameQuest = CFrame.new(-1604.12012, 36.8521118, 154.23732)
             PosQuest = Vector3.new(-1604.12012, 36.8521118, 154.23732)
-            CFrameMon = CFrame.new(-1223.52808, 6.27936459, -502.292664)
+            CFrameMon = CFrame.new(-1129.8836669921875, 40.46354675292969, -525.4237060546875)
             PosMon = Vector3.new(-1223.52808, 6.27936459, -502.292664)
         elseif j == 30 or j <= 39 then
             Ms = "Pirate [Lv. 35]"
@@ -76,7 +76,7 @@ function CheckQuest()
             NameMon = "Pirate"
             CFrameQuest = CFrame.new(-1139.59717, 4.75205183, 3825.16211)
             PosQuest = Vector3.new(-1139.59717, 4.75205183, 3825.16211)
-            CFrameMon = CFrame.new(-1219.32324, 4.75205183, 3915.63452)
+            CFrameMon = CFrame.new(-1103.513427734375, 13.752052307128906, 3896.091064453125)
             PosMon = Vector3.new(-1219.32324, 4.75205183, 3915.63452)
         elseif j == 40 or j <= 59 then
             Ms = "Brute [Lv. 45]"
@@ -85,7 +85,7 @@ function CheckQuest()
             NameMon = "Brute"
             CFrameQuest = CFrame.new(-1139.59717, 4.75205183, 3825.1621)
             PosQuest = Vector3.new(-1139.59717, 4.75205183, 3825.1621)
-            CFrameMon = CFrame.new(-1146.49646, 96.0936813, 4312.1333)
+            CFrameMon = CFrame.new(-1140.083740234375, 14.809885025024414, 4322.92138671875)
             PosMon = Vector3.new(-1146.49646, 96.0936813, 4312.1333)
         elseif j == 60 or j <= 74 then
             Ms = "Desert Bandit [Lv. 60]"
@@ -94,7 +94,7 @@ function CheckQuest()
             NameMon = "Desert Bandit"
             CFrameQuest = CFrame.new(897.031128, 6.43846416, 4388.9716)
             PosQuest = Vector3.new(897.031128, 6.43846416, 4388.9716)
-            CFrameMon = CFrame.new(932.788818, 6.4503746, 4488.24609)
+            CFrameMon = CFrame.new(924.7998046875, 6.44867467880249, 4481.5859375)
             PosMon = Vector3.new(932.788818, 6.4503746, 4488.24609)
         elseif j == 75 or j <= 89 then
             Ms = "Desert Officer [Lv. 70]"
@@ -103,7 +103,7 @@ function CheckQuest()
             NameMon = "Desert Officer"
             CFrameQuest = CFrame.new(897.031128, 6.43846416, 4388.9716)
             PosQuest = Vector3.new(897.031128, 6.43846416, 4388.9716)
-            CFrameMon = CFrame.new(1580.03198, 4.61375761, 4366.86426)
+            CFrameMon = CFrame.new(1608.2822265625, 8.614224433898926, 4371.00732421875)
             PosMon = Vector3.new(1580.03198, 4.61375761, 4366.86426)
         elseif j == 90 or j <= 99 then
             Ms = "Snow Bandit [Lv. 90]"
@@ -112,7 +112,7 @@ function CheckQuest()
             NameMon = "Snow Bandits"
             CFrameQuest = CFrame.new(1384.14001, 87.272789, -1297.06482)
             PosQuest = Vector3.new(1384.14001, 87.272789, -1297.06482)
-            CFrameMon = CFrame.new(1370.24316, 102.403511, -1411.52905)
+            CFrameMon = CFrame.new(1354.347900390625, 87.27277374267578, -1393.946533203125)
             PosMon = Vector3.new(1370.24316, 102.403511, -1411.52905)
         elseif j == 100 or j <= 119 then
             Ms = "Snowman [Lv. 100]"
@@ -121,7 +121,7 @@ function CheckQuest()
             NameMon = "Snowman"
             CFrameQuest = CFrame.new(1384.14001, 87.272789, -1297.06482)
             PosQuest = Vector3.new(1384.14001, 87.272789, -1297.06482)
-            CFrameMon = CFrame.new(1370.24316, 102.403511, -1411.52905)
+            CFrameMon = CFrame.new(1201.6412353515625, 144.57958984375, -1550.0670166015625)
             PosMon = Vector3.new(1370.24316, 102.403511, -1411.52905)
         elseif j == 120 or j <= 149 then
             Ms = "Chief Petty Officer [Lv. 120]"
@@ -130,7 +130,7 @@ function CheckQuest()
             NameMon = "Chief Petty Officer"
             CFrameQuest = CFrame.new(-5035.0835, 28.6520386, 4325.29443)
             PosQuest = Vector3.new(-5035.0835, 28.6520386, 4325.29443)
-            CFrameMon = CFrame.new(-4882.8623, 22.6520386, 4255.53516)
+            CFrameMon = CFrame.new(-4931.1552734375, 65.793113708496, 4121.8393554688)
             PosMon = Vector3.new(-4882.8623, 22.6520386, 4255.53516)
         elseif j == 150 or j <= 174 then
             Ms = "Sky Bandit [Lv. 150]"
@@ -139,7 +139,7 @@ function CheckQuest()
             NameMon = "Sky Bandit"
             CFrameQuest = CFrame.new(-4841.83447, 717.669617, -2623.96436)
             PosQuest = Vector3.new(-4841.83447, 717.669617, -2623.96436)
-            CFrameMon = CFrame.new(-4970.74219, 294.544342, -2890.11353)
+            CFrameMon = CFrame.new(-4953.20703125, 295.74420166015625, -2899.22900390625)
             PosMon = Vector3.new(-4970.74219, 294.544342, -2890.11353)
         elseif j == 175 or j <= 224 then
             Ms = "Dark Master [Lv. 175]"
@@ -148,7 +148,7 @@ function CheckQuest()
             NameMon = "Dark Master"
             CFrameQuest = CFrame.new(-4841.83447, 717.669617, -2623.96436)
             PosQuest = Vector3.new(-4841.83447, 717.669617, -2623.96436)
-            CFrameMon = CFrame.new(-5220.58594, 430.693298, -2278.17456)
+            CFrameMon = CFrame.new(-5259.8447265625, 391.3976745605469, -2229.035400390625)
             PosMon = Vector3.new(-5220.58594, 430.693298, -2278.17456)
         elseif j == 225 or j <= 274 then
             Ms = "Toga Warrior [Lv. 225]"
