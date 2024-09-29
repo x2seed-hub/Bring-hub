@@ -2312,7 +2312,7 @@ ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ImageButton.Position = UDim2.new(0.10615778, 0, 0.16217947, 0)
 
 
-local size = 0.1
+local size = 0.02
 ImageButton.Size = UDim2.new(size, 0, size, 0)
 ImageButton.Image = "rbxassetid://"
 
