@@ -2533,19 +2533,6 @@ end
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Create Tabs
 local Farming = Tabs.Main:AddSection("Farming")
-DropdownDelayAttack:SetValue("Fast Attack")
-DropdownDelayAttack:OnChanged(function(Value)
-    _G.FastAttackFaiFao_Mode = Value
-    if _G.FastAttackFaiFao_Mode == "Fast Attack" then
-        _G.Fast_Delay = 0.1
-    elseif _G.FastAttackFaiFao_Mode == "Normal Attack" then
-        _G.Fast_Delay = 0.15
-    elseif _G.FastAttackFaiFao_Mode == "Super Fast Attack" then
-        _G.Fast_Delay = 0
-    end
-end)
-
-
     local DropdownSelectWeapon = Tabs.Main:AddDropdown("DropdownSelectWeapon", {
         Title = "Weapon",
         Description = "",
