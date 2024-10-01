@@ -2643,7 +2643,7 @@ local Farming = Tabs.Main:AddSection("Farming")
         end
         end
         end)
-        _G.FastAttackDelay = 0
+        _G.FastAttackDelay = 0.05
 
     local Client = game.Players.LocalPlayer
     local STOP = require(Client.PlayerScripts.CombatFramework.Particle)
