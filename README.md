@@ -2613,7 +2613,7 @@ local Farming = Tabs.Main:AddSection("Farming")
           for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
           if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
           if v.Name == Ms then
-          repeat wait(_G.Fast_Delay)
+          repeat wait(_G.FastAttackDelay)
           AttackNoCoolDown()
           bringmob = true
           AutoHaki()
